@@ -3,7 +3,7 @@ if exists("g:loaded_vivify")
 endif
 let g:loaded_vivify = 1
 
-function s:init()
+function! s:init()
     augroup vivify_sync
         autocmd!
         autocmd CursorHold,CursorHoldI *
@@ -17,3 +17,5 @@ augroup vivify_init
     autocmd!
     autocmd BufEnter,FileType * if &filetype == 'markdown' | call s:init() | endif
 augroup END
+
+command! Vivify call vivify#open()
