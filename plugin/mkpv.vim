@@ -6,7 +6,10 @@ let g:loaded_mkpv = 1
 function s:init()
     augroup mkpv_sync
         autocmd!
-        autocmd CursorHold,CursorHoldI * if &filetype == 'markdown' | call mkpv#sync() | endif
+        autocmd CursorHold,CursorHoldI *
+            \ if &filetype == 'markdown' | call mkpv#sync_content() | endif
+        autocmd CursorMoved,CursorMovedI *
+            \ if &filetype == 'markdown' | call mkpv#sync_cursor() | endif
     augroup END
 endfunction
 
