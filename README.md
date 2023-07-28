@@ -1,6 +1,6 @@
 # vivify.vim
 
-This plugin connects Vim to the [vivify Markdown
+This plugin connects Vim to [vivify Markdown
 viewer](https://github.com/jannis-baum/vivify).
 
 ## Features
