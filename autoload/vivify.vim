@@ -1,5 +1,7 @@
 let s:viv_url = 'http://localhost:' . ($VIV_PORT == '' ? '31622' : $VIV_PORT)
 
+" Note: nvim's jobstart isn't exactly a drop-in replacement for vim's job_start
+" See here: https://stackoverflow.com/questions/74999614/difference-between-vims-job-start-function-and-neovims-jobstart-functi
 if has("nvim")
     let s:job_start = function("jobstart")
 else
@@ -23,6 +25,7 @@ function! vivify#sync_cursor()
 endfunction
 
 function! vivify#open()
+    " Note: nvim's jobstart doesn't use these opt keys
     call s:job_start(
         \ ['viv', expand('%:p')],
         \ {"in_io": "null", "out_io": "null", "err_io": "null"}
