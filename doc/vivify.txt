@@ -15,16 +15,16 @@ You may also want to map it to a keybind, for example: >
     nnoremap <leader>v <cmd>Vivify<cr>
 <
 Tip: to set a keybind for Markdown files only, add the mapping in your
-ftplugin directory under markdown.vim as: >
+|ftplugin| directory under markdown.vim as: >
     nnoremap <buffer> <leader>v <cmd>Vivify<cr>
 <
 
 CONFIGURATION     *vivify-configuration*
 
-Refresh page contents on TextChanged and TextChangedI (default): >
+Refresh page contents on |TextChanged| and |TextChangedI| (default): >
     let g:vivify_instant_refresh = 1
 <
-Refresh page contents on CursorHold and CursorHoldI: >
+Refresh page contents on |CursorHold| and |CursorHoldI|: >
     let g:vivify_instant_refresh = 0
 <
 To recognize other filetypes as markdown, use g:vivify_filetypes array,
