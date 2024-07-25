@@ -11,6 +11,16 @@ NeoVim is supported.
 - all open viewers automatically scroll to keep in sync with your cursor in Vim
 - open the current buffer's contents in vivify with `:Vivify`
 
+## Configuration
+
+- `g:vivify_instant_refresh = 1`
+    - refresh page contents on `TextChanged` and `TextChangedI` (default)
+- `g:vivify_instant_refresh = 0`
+    - refresh page contents on `CursorHold` and `CursorHoldI`
+- `g:vivify_filetypes`
+    - additional filetypes to recognize as markdown
+    - for example `let g:vivify_filetypes = ['vimwiki']`
+
 ## Installation
 
 With [vivify](https://github.com/jannis-baum/vivify) installed in your PATH, you
