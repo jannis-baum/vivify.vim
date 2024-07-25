@@ -20,4 +20,5 @@ can install this plugin just like any other Vim plugin, e.g.
   `~/.vim/pack/plugin/start` (works best as a [submodule of your
   dotfiles](https://github.com/jannis-baum/dotfiles)
 - with Plug: `Plug jannis-baum/vivify.vim`
+- with Lazy: `{ "jannis-baum/vivify.vim" }`
 - ...
