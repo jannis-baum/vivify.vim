@@ -43,7 +43,7 @@ endfunction
 function! vivify#open()
     " Note: nvim's jobstart doesn't use these opt keys
     call s:job_start(
-        \ ['viv', expand('%:p')],
+        \ ['viv', expand('%:p')->substitute(':', '\\:', 'g') . ':' . getpos('.')[1]],
         \ {"in_io": "null", "out_io": "null", "err_io": "null"}
     \)
 endfunction
