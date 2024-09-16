@@ -21,13 +21,27 @@ else
     let s:job_start = function('job_start')
 endif
 
+function! s:percent_encode(path)
+    if has('python3')
+        " With python3 support, do proper percent encoding of url
+        " Vim needs to be compiled with +python
+        " Neovim needs pynvim installed
+        py3 from urllib.parse import quote
+        return py3eval('quote("' . a:path . '")')
+    else
+        " If no python3 support, still handle the biggest problem
+        " which is spaces in filenames
+        return substitute(a:path, ' ', '%20', 'g')
+    endif
+endfunction
+
 function! s:post(data)
     let l:job = s:job_start([
         \ 'curl',
         \ '-X', 'POST',
         \ '-H', 'Content-type: application/json',
         \ '--data', '@-',
-        \ s:viv_url . '/viewer' . expand('%:p')
+        \ s:viv_url . '/viewer' . s:percent_encode(expand('%:p'))
     \])
     call s:stdin_send_and_close(l:job, json_encode(a:data))
 endfunction
