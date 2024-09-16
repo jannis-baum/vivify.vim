@@ -24,7 +24,7 @@ endif
 function! s:percent_encode(path)
     if has('python3')
         " With python3 support, do proper percent encoding of url
-        " Vim needs to be compiled with +python
+        " Vim needs to be compiled with +python3 (check `vim --version`)
         " Neovim needs pynvim installed
         py3 from urllib.parse import quote
         return py3eval('quote("' . a:path . '")')
