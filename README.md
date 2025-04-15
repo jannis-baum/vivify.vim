@@ -3,7 +3,7 @@
 This plugin connects Vim to [vivify Markdown
 viewer](https://github.com/jannis-baum/vivify).
 
-NeoVim is supported.
+Neovim is supported.
 
 ## Features
 
