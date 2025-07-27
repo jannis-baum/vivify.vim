@@ -27,7 +27,7 @@ This plugin connects Vim and Neovim to the live markdown viewer
 
 ## Installation
 
-With [Vivify](https://github.com/jannis-baum/vivify) installed in your PATH, you
+With [Vivify](https://github.com/jannis-baum/Vivify) installed in your PATH, you
 can install this plugin just like any other Vim plugin, e.g.
 
 - with Vim8's native plugin manager by adding it to your
