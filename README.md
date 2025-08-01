@@ -1,15 +1,19 @@
 # vivify.vim
 
-This plugin connects Vim to [vivify Markdown
-viewer](https://github.com/jannis-baum/vivify).
+This plugin connects Vim and Neovim to the live markdown viewer
+[Vivify](https://github.com/jannis-baum/Vivify).
 
-Neovim is supported.
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/jannis-baum/assets/refs/heads/main/Vivify/showcase-dark.gif">
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/jannis-baum/assets/refs/heads/main/Vivify/showcase-light.gif">
+  <img alt="Showcase" src="https://raw.githubusercontent.com/jannis-baum/assets/refs/heads/main/Vivify/showcase-dark.gif">
+</picture>
 
 ## Features
 
+- open the current buffer's contents in Vivify with `:Vivify`
 - all open viewers automatically update their content as you are editing it in Vim
 - all open viewers automatically scroll to keep in sync with your cursor in Vim
-- open the current buffer's contents in vivify with `:Vivify`
 
 ## Configuration
 
@@ -23,7 +27,7 @@ Neovim is supported.
 
 ## Installation
 
-With [vivify](https://github.com/jannis-baum/vivify) installed in your PATH, you
+With [Vivify](https://github.com/jannis-baum/Vivify) installed in your PATH, you
 can install this plugin just like any other Vim plugin, e.g.
 
 - with Vim8's native plugin manager by adding it to your
