@@ -3,9 +3,6 @@ if exists("g:loaded_vivify")
 endif
 let g:loaded_vivify = 1
 
-let s:vivify_instant_refresh = get(g:, "vivify_instant_refresh", 1)
-let s:vivify_auto_scroll = get(g:, "vivify_auto_scroll", 1)
-
 let s:filetype_match_str = 'markdown'
 if exists("g:vivify_filetypes")
     call add(g:vivify_filetypes, s:filetype_match_str)
@@ -19,17 +16,18 @@ endfunction
 function! s:init()
     augroup vivify_sync
         autocmd!
-        if s:vivify_instant_refresh
-            autocmd TextChanged,TextChangedI *
-                \ if s:is_vivify_filetype(&filetype) | call vivify#sync_content() | endif
-        else
-            autocmd CursorHold,CursorHoldI *
-                \ if s:is_vivify_filetype(&filetype) | call vivify#sync_content() | endif
-        endif
-        if s:vivify_auto_scroll
-            autocmd CursorMoved,CursorMovedI *
-                \ if s:is_vivify_filetype(&filetype) | call vivify#sync_cursor() | endif
-        endif
+        autocmd TextChanged,TextChangedI *
+            \ if get(g:, "vivify_instant_refresh", 1) && s:is_vivify_filetype(&filetype) |
+            \     call vivify#sync_content() |
+            \ endif
+        autocmd CursorHold,CursorHoldI *
+            \ if !get(g:, "vivify_instant_refresh", 1) && s:is_vivify_filetype(&filetype) |
+            \     call vivify#sync_content() |
+            \ endif
+        autocmd CursorMoved,CursorMovedI *
+            \ if get(g:, "vivify_auto_scroll", 1) && s:is_vivify_filetype(&filetype) |
+            \     call vivify#sync_cursor() |
+            \ endif
     augroup END
 endfunction
 
