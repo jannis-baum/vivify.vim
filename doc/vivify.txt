@@ -27,6 +27,12 @@ Refresh page contents on |TextChanged| and |TextChangedI| (default): >
 Refresh page contents on |CursorHold| and |CursorHoldI|: >
     let g:vivify_instant_refresh = 0
 <
+Enable viewer auto-scroll (default): >
+    let g:vivify_auto_scroll = 1
+<
+Disable viewer auto-scroll: >
+    let g:vivify_auto_scroll = 0
+<
 To recognize other filetypes as markdown, use g:vivify_filetypes array,
 for example: >
     let g:vivify_filetypes = ['vimwiki']
