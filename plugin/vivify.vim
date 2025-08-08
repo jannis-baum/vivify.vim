@@ -4,6 +4,7 @@ endif
 let g:loaded_vivify = 1
 
 let s:vivify_instant_refresh = get(g:, "vivify_instant_refresh", 1)
+let s:vivify_auto_scroll = get(g:, "vivify_auto_scroll", 1)
 
 let s:filetype_match_str = 'markdown'
 if exists("g:vivify_filetypes")
@@ -25,8 +26,10 @@ function! s:init()
             autocmd CursorHold,CursorHoldI *
                 \ if s:is_vivify_filetype(&filetype) | call vivify#sync_content() | endif
         endif
-        autocmd CursorMoved,CursorMovedI *
-            \ if s:is_vivify_filetype(&filetype) | call vivify#sync_cursor() | endif
+        if s:vivify_auto_scroll
+            autocmd CursorMoved,CursorMovedI *
+                \ if s:is_vivify_filetype(&filetype) | call vivify#sync_cursor() | endif
+        endif
     augroup END
 endfunction
 

@@ -21,6 +21,10 @@ This plugin connects Vim and Neovim to the live markdown viewer
     - refresh page contents on `TextChanged` and `TextChangedI` (default)
 - `g:vivify_instant_refresh = 0`
     - refresh page contents on `CursorHold` and `CursorHoldI`
+- `g:vivify_auto_scroll = 1`
+    - enable viewer auto-scroll (default)
+- `g:vivify_auto_scroll = 0`
+    - disable viewer auto-scroll
 - `g:vivify_filetypes`
     - additional filetypes to recognize as markdown
     - for example `let g:vivify_filetypes = ['vimwiki']`
