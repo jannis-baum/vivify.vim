@@ -41,7 +41,7 @@ can install this plugin just like any other Vim plugin, e.g.
 - with Lazy: `{ "jannis-baum/vivify.vim" }`
 - ...
 
-The plugin is available in [nixpkgs-unstable](https://search.nixos.org/packages?channel=unstable&query=vivify-vim) as `vimPlugins.vivify-vim`. You can add it with HomeManager with by adding it to:
+The plugin is available in [nixpkgs-unstable](https://search.nixos.org/packages?channel=unstable&query=vivify-vim) as `vimPlugins.vivify-vim`. You can add it with HomeManager by adding it to:
 
 - `programs.vim.plugins` (for Vim)
 - `programs.neovim.plugins` (for Neovim)
